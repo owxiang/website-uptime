@@ -57,8 +57,9 @@ jobs:
             fi
     
             # Calculates the average of all uptimes in percentage
-            AVG_UPTIME=$(awk '/up_time: 100%/{u++} END{printf "%.2f", (u/NR)*100}' "$FILENAME")
-    
+            # AVG_UPTIME=$(awk '/up_time: 100%/{u++} END{printf "%.2f", (u/NR)*100}' "$FILENAME")
+            AVG_UPTIME=$(awk '/up_time: 100%/{u++} END{if (NR==0) printf "0.00"; else printf "%.2f", (u/NR)*100}' "$FILENAME")
+
             echo "date_time: $DATE_TIME, response_time: $RESPONSE_TIME, up_time: $UPTIME%" >> "$FILENAME"
             echo "| www.$WEBSITE | $RESPONSE_TIME <br> <img src=\"graph/${WEBSITE//./.}.png\" alt=\"Graph\" width=\"200\" height=\"200\">  | $STATUS | $AVG_UPTIME |" >> README.md.tmp
     
