@@ -20,8 +20,58 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip3 install matplotlib==3.7.1
+          
+      - name: Check website and update_history
+        run: |
+          WEBSITES=(
+            "thiswebsiteisdown.net"
+            "facebook.com"
+          )
+          DATE_TIME=$(date -u +"%d/%m/%Y %H:%M" --date="8 hours")
+          echo "# Web Monitoring"$'\n\n'"Last Checked: $DATE_TIME"$'\n' > README.md.tmp
+          echo "| Website | Response Time (s) | Status | Avg Uptime (%) |" >> README.md.tmp
+          echo "|---------|-------------------|--------|----------------|" >> README.md.tmp
+    
+          for WEBSITE in "${WEBSITES[@]}"; do
+            FILENAME="history/${WEBSITE//./.}.txt"
+    
+            if [[ ! -f "$FILENAME" ]]; then
+              mkdir -p history
+              touch "$FILENAME"
+            fi
+    
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L --fail $WEBSITE || echo "Error")
+            UPTIME=100
+    
+            if [[ $STATUS != 200 && $STATUS != "Error" ]]; then
+              RESPONSE_TIME=0
+              STATUS="❌ Down"
+              UPTIME=0
+    
+              # Send Slack notification to the #sally-devs channel
+              if [[ -n "$SLACK_WEBHOOK_SALLY_DEV" ]]; then
+                curl -X POST -H 'Content-type: application/json' --data '{"text":"Website '$WEBSITE' is down!","channel":"#sally-devs"}' $SLACK_WEBHOOK_SALLY_DEV
+              else
+                echo "SLACK_WEBHOOK_SALLY_DEV environment variable is not set. Skipping Slack notification."
+              fi
+    
+            else
+              RESPONSE_TIME=$(curl -o /dev/null -s -w "%{time_total}\n" --fail -L -w "%{time_total}\n" -o /dev/null $WEBSITE)
+              STATUS="✅ Up"
+            fi
+    
+            # Calculates the average of all uptimes in percentage
+            AVG_UPTIME=$(awk '/up_time: 100%/{u++} END{printf "%.2f", (u/NR)*100}' "$FILENAME")
+    
+            echo "date_time: $DATE_TIME, response_time: $RESPONSE_TIME, up_time: $UPTIME%" >> "$FILENAME"
+            echo "| www.$WEBSITE | $RESPONSE_TIME <br> <img src=\"graph/${WEBSITE//./.}.png\" alt=\"Graph\" width=\"200\" height=\"200\">  | $STATUS | $AVG_UPTIME |" >> README.md.tmp
+    
+          done
+    
+          mv README.md.tmp README.md
 
-      - name: Run script
+
+      - name: Run generate_graph script
         run: |
           python3 generate_graph.py 
           
