@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install matplotlib==3.7.1
           
-      - name: Check website and update_history
+      - name: Check website and update history
         run: |
           WEBSITES=(
             "thiswebsiteisdown.net"
@@ -48,13 +48,9 @@ jobs:
               STATUS="❌ Down"
               UPTIME=0
     
-              # Send Slack notification to the #sally-devs channel
-              if [[ -n "$SLACK_WEBHOOK_SALLY_DEV" ]]; then
-                curl -X POST -H 'Content-type: application/json' --data '{"text":"Website '$WEBSITE' is down!","channel":"#sally-devs"}' $SLACK_WEBHOOK_SALLY_DEV
-              else
-                echo "SLACK_WEBHOOK_SALLY_DEV environment variable is not set. Skipping Slack notification."
-              fi
-    
+              # Send Slack notification 
+              # Enter code here
+
             else
               RESPONSE_TIME=$(curl -o /dev/null -s -w "%{time_total}\n" --fail -L -w "%{time_total}\n" -o /dev/null $WEBSITE)
               STATUS="✅ Up"
