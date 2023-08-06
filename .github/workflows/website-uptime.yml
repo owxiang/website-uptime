@@ -82,5 +82,5 @@ jobs:
           branch=${branch#refs/heads/}
           git checkout $branch
           git pull origin $branch
-          git add *.md
+          git add *
           git diff --quiet && git diff --staged --quiet || (git commit -m "update README.md, history and graph!" && git push origin $branch)
