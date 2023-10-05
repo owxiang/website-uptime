@@ -61,3 +61,4 @@ date_time: 01/10/2023 09:07, response_time: 0.120904, up_time: 100%
 date_time: 02/10/2023 09:00, response_time: 0.083383, up_time: 100%
 date_time: 03/10/2023 09:00, response_time: 0.252693, up_time: 100%
 date_time: 04/10/2023 09:00, response_time: 0.597872, up_time: 100%
+date_time: 05/10/2023 09:00, response_time: 0.085153, up_time: 100%
