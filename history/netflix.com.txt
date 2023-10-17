@@ -73,3 +73,4 @@ date_time: 13/10/2023 09:01, response_time: 0.913468, up_time: 100%
 date_time: 14/10/2023 08:58, response_time: 1.994644, up_time: 100%
 date_time: 15/10/2023 09:04, response_time: 1.136841, up_time: 100%
 date_time: 16/10/2023 09:06, response_time: 1.214778, up_time: 100%
+date_time: 17/10/2023 09:00, response_time: 1.095112, up_time: 100%
