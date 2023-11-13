@@ -100,3 +100,4 @@ date_time: 09/11/2023 09:02, response_time: 0.092122, up_time: 100%
 date_time: 10/11/2023 09:01, response_time: 0.156324, up_time: 100%
 date_time: 11/11/2023 09:00, response_time: 0.083604, up_time: 100%
 date_time: 12/11/2023 09:05, response_time: 0.091706, up_time: 100%
+date_time: 13/11/2023 09:03, response_time: 0.106492, up_time: 100%
