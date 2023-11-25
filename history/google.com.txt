@@ -111,3 +111,4 @@ date_time: 21/11/2023 09:04, response_time: 0.062649, up_time: 100%
 date_time: 22/11/2023 09:05, response_time: 0.084324, up_time: 100%
 date_time: 23/11/2023 09:02, response_time: 0.059149, up_time: 100%
 date_time: 24/11/2023 09:01, response_time: 0.070816, up_time: 100%
+date_time: 25/11/2023 09:00, response_time: 0.066522, up_time: 100%
