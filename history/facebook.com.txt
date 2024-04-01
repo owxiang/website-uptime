@@ -241,3 +241,4 @@ date_time: 28/03/2024 09:00, response_time: 0.358899, up_time: 100%
 date_time: 29/03/2024 09:00, response_time: 0.220173, up_time: 100%
 date_time: 30/03/2024 08:58, response_time: 0.363819, up_time: 100%
 date_time: 31/03/2024 09:06, response_time: 0.242769, up_time: 100%
+date_time: 01/04/2024 09:06, response_time: 0.301595, up_time: 100%
