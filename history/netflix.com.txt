@@ -485,3 +485,4 @@ date_time: 02/12/2024 08:22, response_time: 0.765049, up_time: 100%
 date_time: 03/12/2024 08:22, response_time: 0.874344, up_time: 100%
 date_time: 04/12/2024 08:22, response_time: 0.770193, up_time: 100%
 date_time: 05/12/2024 08:21, response_time: 1.261725, up_time: 100%
+date_time: 06/12/2024 08:21, response_time: 0, up_time: 0%
