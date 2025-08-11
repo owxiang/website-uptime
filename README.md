@@ -1,10 +1,10 @@
 # Web Monitoring
 
-Last Checked: 10/08/2025 08:27
+Last Checked: 11/08/2025 08:26
 
 | Website | Response Time (s) | Status | Avg Uptime (%) |
 |---------|-------------------|--------|----------------|
 | www.thiswebsiteisdown.net | 0 <br> <img src="graph/thiswebsiteisdown.net.png" alt="Graph" width="200" height="200">  | ❌ Down | 0.00 |
-| www.netflix.com | 0.631802 <br> <img src="graph/netflix.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 99.73 |
-| www.google.com | 0.059612 <br> <img src="graph/google.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 100.00 |
-| www.facebook.com | 0.246937 <br> <img src="graph/facebook.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 99.73 |
+| www.netflix.com | 0.667180 <br> <img src="graph/netflix.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 99.73 |
+| www.google.com | 0.055283 <br> <img src="graph/google.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 100.00 |
+| www.facebook.com | 0.280727 <br> <img src="graph/facebook.com.png" alt="Graph" width="200" height="200">  | ✅ Up | 99.73 |
